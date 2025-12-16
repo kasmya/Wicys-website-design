@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WiCyS India – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts: Montserrat (headings) & Roboto (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --purple: #6A1B9A;
+      --white: #FFFFFF;
+      --green: #388E3C;
+      --gray: #9E9E9E;
+      --max-width: 1100px;
+      --section-padding: 3rem;
+      --radius: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #222222;
+      background-color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--white);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-placeholder {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--purple);
+    }
+
+    .logo-text {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--purple);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding-bottom: 0.15rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-color: var(--green);
+      color: var(--purple);
+    }
+
+    /* HERO / MAIN BANNER */
+    .hero {
+      background: linear-gradient(120deg, #f4e8ff, #ffffff);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: var(--purple);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      max-width: 32rem;
+      color: #444444;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary {
+      background-color: var(--green);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background-color 0.18s ease, transform 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #2e6e31;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--purple);
+      border-radius: var(--radius);
+      padding: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--purple);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background-color 0.18s ease, color 0.18s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--purple);
+      color: var(--white);
+    }
+
+    .hero-visual {
+      border-radius: 14px;
+      border: 1px dashed var(--purple);
+      padding: 1.75rem 1.5rem;
+      background-color: #faf5ff;
+    }
+
+    .hero-visual-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-placeholder-block {
+      height: 150px;
+      border-radius: 10px;
+      border: 1px solid var(--gray);
+      background: repeating-linear-gradient(
+        -45deg,
+        #fdfbff,
+        #fdfbff 8px,
+        #f1edf8 8px,
+        #f1edf8 16px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* MAIN CONTENT SECTIONS */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    section {
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      padding: var(--section-padding) 1.75rem;
+      background-color: #ffffff;
+    }
+
+    section:nth-of-type(2n) {
+      background-color: #fafafa;
+    }
+
+    .section-heading {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subheading {
+      font-size: 0.95rem;
+      color: #555555;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 1.25rem;
+      background-color: #ffffff;
+    }
+
+    .card-heading {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--purple);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: #555555;
+      margin-bottom: 0.75rem;
+    }
+
+    .placeholder-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--gray);
+      border: 1px dashed var(--gray);
+      border-radius: 999px;
+      padding: 0.15rem 0.6rem;
+    }
+
+    ul.bullet-list {
+      list-style: disc inside;
+      font-size: 0.9rem;
+      color: #444444;
+    }
+
+    ul.bullet-list li + li {
+      margin-top: 0.3rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      background-color: #f7f7f7;
+      padding: 1.75rem 1.25rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.75rem;
+      font-size: 0.85rem;
+      color: #555555;
+    }
+
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: var(--purple);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li + li {
+      margin-top: 0.25rem;
+    }
+
+    .footer-links a {
+      color: #555555;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 1.5rem auto 0;
+      font-size: 0.8rem;
+      color: var(--gray);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-top: 2.5rem;
+      }
+
+      nav ul {
+        justify-content: flex-end;
+        font-size: 0.85rem;
+      }
+
+      section {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-container {
+        flex-wrap: wrap;
+      }
+
+      nav ul {
+        width: 100%;
+        justify-content: flex-start;
+        row-gap: 0.5rem;
+      }
+
+      .hero-title {
+        font-size: 1.7rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-placeholder">
+        <div class="logo-box">Logo</div>
+        <div class="logo-text">WiCyS India</div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Programs &amp; Initiatives</a></li>
+          <li><a href="#">Events &amp; News</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Contact / Join Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / MAIN BANNER -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-kicker">WiCyS India Affiliate</span>
+        <h1 id="hero-title" class="hero-title">
+          Building India’s Future in Cybersecurity
+        </h1>
+        <p class="hero-subtitle">
+          Empowering women to learn, lead, and secure the digital world through
+          community, mentorship, and opportunities.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" type="button">
+            Join Our Community
+          </button>
+          <button class="btn-secondary" type="button">
+            Explore Programs
+          </button>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="Hero visual placeholder">
+        <p class="hero-visual-title">Main Banner Image Placeholder</p>
+        <div class="hero-placeholder-block">
+          Replace with authentic WiCyS India photo / illustration
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- SECTION 1 -->
+    <section aria-labelledby="section1-heading">
+      <h2 id="section1-heading" class="section-heading">Section 1</h2>
+      <p class="section-subheading">
+        Text placeholder 1 – use this section for a short “What is WiCyS India?”
+        overview or key value proposition.
+      </p>
+
+      <div class="section-grid">
+        <div class="card">
+          <h3 class="card-heading">Text block 1</h3>
+          <p class="card-text">
+            Replace this placeholder with a concise paragraph explaining who you
+            are and what the affiliate focuses on.
+          </p>
+          <span class="placeholder-tag">Content placeholder</span>
+        </div>
+        <div class="card">
+          <h3 class="card-heading">Text block 2</h3>
+          <p class="card-text">
+            Use short paragraphs and bullet lists to highlight mission, vision,
+            and impact in a professional, inclusive tone.
+          </p>
+          <ul class="bullet-list">
+            <li>Professional, empowering, inclusive language</li>
+            <li>Clear headings and short paragraphs</li>
+            <li>Readable on both desktop and mobile</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section aria-labelledby="section2-heading">
+      <h2 id="section2-heading" class="section-heading">Section 2</h2>
+      <p class="section-subheading">
+        Text placeholder 2 – use this area for “Programs &amp; Initiatives” or
+        “Events &amp; Highlights,” as outlined in your document.
+      </p>
+
+      <div class="section-grid">
+        <div class="card">
+          <h3 class="card-heading">Programs &amp; Initiatives</h3>
+          <p class="card-text">
+            Briefly introduce key initiatives such as mentorship, outreach, and
+            research. Each card can later link to a detailed page.
+          </p>
+          <span class="placeholder-tag">Card content placeholder</span>
+        </div>
+        <div class="card">
+          <h3 class="card-heading">Sample Program List</h3>
+          <ul class="bullet-list">
+            <li>Mentorship</li>
+            <li>Outreach</li>
+            <li>Research</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section aria-labelledby="section3-heading">
+      <h2 id="section3-heading" class="section-heading">Section 3</h2>
+      <p class="section-subheading">
+        Text placeholder 3 – use this section for “Events &amp; Highlights,”
+        “Resources,” or “Community Stories,” with concise content blocks and
+        placeholders for images.
+      </p>
+
+      <div class="section-grid">
+        <div class="card">
+          <h3 class="card-heading">Events &amp; Highlights</h3>
+          <p class="card-text">
+            Upcoming events and recent highlights can be listed here with short
+            descriptions and “Read more” links.
+          </p>
+          <ul class="bullet-list">
+            <li>Upcoming Event – placeholder</li>
+            <li>Upcoming Event – placeholder</li>
+            <li>Upcoming Event – placeholder</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-heading">Resources</h3>
+          <p class="card-text">
+            Placeholder for learning kits, cyber safety articles, and workshops.
+          </p>
+          <ul class="bullet-list">
+            <li>Learning Kits</li>
+            <li>Cyber Safety Articles</li>
+            <li>Workshops</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3 class="footer-heading">Policy Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Social Media</h3>
+        <ul class="footer-links">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">FAQ Quick Access</h3>
+        <ul class="footer-links">
+          <li><a href="#">What is WiCyS India?</a></li>
+          <li><a href="#">How do I join?</a></li>
+          <li><a href="#">Mentorship program FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 WiCyS India Affiliate. All rights reserved.</span>
+      <span>Designed for Website Revamp – Week 3.</span>
+    </div>
+  </footer>
+</body>
+</html>
